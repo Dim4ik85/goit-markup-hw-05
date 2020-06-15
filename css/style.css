@@ -86,41 +86,34 @@ body, button {
 }
   /* Навигация и телефон */
 /* .site-nav*/
-.site-nav .link { 
-    display: block;
+.link { 
     padding-top: 32px;
     padding-bottom: 32px;
-
+    position: relative;
     color: var(--primary-text-color);
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.active::after {
+.current::after {
     content: '';
-  
     position: absolute;
     left: 0;
     bottom: 0;
-      
-    display: block;
     width: 100%;
     height: 4px;
     background-color: var(--accent-text-color);
-    border-radius: 2px
-    
+    border-radius: 2px;
 }
-.site-nav .link:hover,
-.site-nav .link:focus {
+.link:hover,
+.link:focus {
     color: var(--accent-text-color);
-    transform: scale(1,1);
-}
- 
-.site-nav .link.current {
+   }
+.link.current {
     color: var(--accent-text-color);
 }
 
@@ -256,6 +249,7 @@ body, button {
     margin: 0px;
     padding: 0px;
 }
+/* Кнопки В ПОРТФОЛИО */
 .button-secondary {
     
     background: var(--second-grey-color);
@@ -750,7 +744,6 @@ p.profi {
 }
 
 .overlay-text {
-    
     display: inline-block;
     padding: 63px 24px;
 
@@ -771,7 +764,7 @@ p.profi {
     background-color: rgba(33, 150, 243, 0.9);
 
     transform: translateY(100%);
-    opacity: 0;
+    opacity: 1;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -780,7 +773,7 @@ p.profi {
     overflow: hidden;
   }
 .card:hover .overlay,
-.card:focus .overlay {
-  transform: translateX(0);
+.card .card-foto:focus .overlay {
   opacity: 1;
+  transform: translateY(0);
 }
